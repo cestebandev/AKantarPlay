@@ -17,9 +17,10 @@ function onOpen(){
 }
 
 //Retorna la página principal
-function doGet()
-{
-    return HtmlService.createHtmlOutputFromFile('index');
+function doGet() {
+  let layout = HtmlService.createHtmlOutputFromFile('index');
+  layout.saludo = "Bienvenido/a A Kantar Karaoke Bar";
+  return layout.evaluate();
 }
 
 // La clase HtmlService nos permite utilizar Html para interactuar con la interfaz web
